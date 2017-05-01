@@ -2,6 +2,9 @@ ENV['RACK_ENV'] = 'test'
 
 require 'capybara'
 require 'capybara/rspec'
+require 'data_mapper'
+require 'dm-migrations'
+require 'dm-postgres-adapter'
 require 'rspec'
 require_relative '../app'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
