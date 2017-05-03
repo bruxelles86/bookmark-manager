@@ -8,3 +8,8 @@ gem 'dm-migrations'
 gem 'dm-postgres-adapter'
 gem 'rspec'
 gem 'sinatra'
+
+group :test do
+  gem 'dm-transactions'
+  gem 'database_cleaner'
+end
