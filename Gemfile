@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 source "https://rubygems.org"
-ruby '2.4.1'
+ruby '2.4.0'
 
 
 # gem "rails"
@@ -9,7 +9,7 @@ gem 'data_mapper'
 gem 'dm-migrations'
 gem 'dm-postgres-adapter'
 gem 'rspec'
-gem 'sinatra'
+gem 'sinatra', '2.0.0.rc2'
 
 group :test do
   gem 'dm-transactions'
