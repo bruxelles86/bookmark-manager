@@ -9,7 +9,7 @@ DataMapper.finalize.auto_upgrade!
 
 class BookmarkManager < Sinatra::Base
   get '/' do
-
+    redirect '/links'
   end
 
   get '/links' do
