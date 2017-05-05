@@ -11,7 +11,6 @@ require_relative '../app/app.rb'
 require_relative '../app/models/link.rb'
 #require File.join(File.dirname(__FILE__), '..', 'app.rb')
 Capybara.app = BookmarkManager
-DataMapper::Logger.new($stdout, :debug)
 DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{ENV['RACK_ENV']}")
 DataMapper.finalize.auto_upgrade!
 DatabaseCleaner.strategy = :truncation

@@ -21,3 +21,16 @@ feature 'Tags bookmarks' do
     DatabaseCleaner.clean
   end
 end
+
+feature 'Filters by tags' do
+  scenario 'checks articles with \'bubbles\' tag appear on /tags/bubbles' do
+    DatabaseCleaner.start
+    visit('/links/new')
+    Link.create(title: 'Bubbles', url: 'www.bubbles.com', tags: [Tag.first_or_create(name: 'bubbles')])
+    Link.create(title: 'BBC', url: 'https://www.bbc.co.uk', tags: [Tag.first_or_create(name: 'news')])
+    visit ('/tags/bubbles')
+    expect(page).to have_content ('Bubbles')
+    expect(page).not_to have_content ('BBC')
+    DatabaseCleaner.clean
+  end
+end
