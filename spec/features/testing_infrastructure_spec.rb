@@ -43,9 +43,16 @@ feature 'Allows multiple tags to be assigned' do
     fill_in 'tags', with: 'education, IT'
     click_button 'Save!'
     link = Link.first
-    save_and_open_page
     expect(link.tags.map{ |tag| tag.name }).to include ('education')
     expect(link.tags.map{ |tag| tag.name }).to include ('IT')
     DatabaseCleaner.clean
+  end
+end
+
+feature 'User sign up' do
+  scenario 'I can sign up as a new user' do
+    expect { sign_up }.to change(User, :count).by(1)
+    expect(page).to have_content('Welcome, alice@example.com')
+    expect(User.first.email).to eq('alice@example.com')
   end
 end

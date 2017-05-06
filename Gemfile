@@ -4,6 +4,7 @@ ruby '2.4.0'
 
 
 # gem "rails"
+gem 'bcrypt'
 gem 'capybara'
 gem 'data_mapper'
 gem 'dm-migrations'
